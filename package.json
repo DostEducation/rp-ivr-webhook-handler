@@ -1,7 +1,8 @@
 {
   "dependencies": {
     "@google-cloud/functions-framework": "^2.1.0",
-    "@google-cloud/tasks": "^3.0.2"
+    "@google-cloud/tasks": "^3.0.2",
+    "pre-commit": "^1.2.2"
   },
   "scripts": {
     "start": "functions-framework functions-framework --target=handle-webhook --port=8080"
