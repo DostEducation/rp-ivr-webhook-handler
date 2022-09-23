@@ -1,3 +1,0 @@
-google-cloud-tasks==2.10.2
-functions-framework==3.*
-pre-commit==2.11.0
