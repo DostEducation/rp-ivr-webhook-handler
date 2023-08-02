@@ -9,14 +9,13 @@ import json
 def handle(req):
     try:
         payload = json.dumps(req.get_json())
-        logger.info(f"Payload: {payload}")
 
         client = tasks_v2.CloudTasksClient()
         parent = client.queue_path(config.PROJECT, config.LOCATION, config.QUEUE)
         task = {
             "http_request": { # Specify the type of request.
                 "http_method": tasks_v2.HttpMethod.POST,
-                "url": config.TARGET_FUNCTION_URL, # The full url path that the task will be sent to.
+                "url": config.TARGET_FUNCTION_URL,
                 "body": payload.encode('utf-8'),
                 "headers": {"Content-type": "application/json"}
             }
@@ -27,4 +26,4 @@ def handle(req):
 
         return "Success"
     except Exception as e:
-        logger.error(f"Error in handle function: {e}")
+        logger.error(f"Error in handle function: {e}, Payload: {payload}")
