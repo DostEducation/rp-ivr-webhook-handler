@@ -1,7 +1,9 @@
+"""Flask configuration."""
 import os
 
 ENVIRONMENT = os.environ.get("ENVIRONMENT", "development")
 
+# Development env specific
 if ENVIRONMENT == "development":
     from os import path
     from dotenv import load_dotenv
