@@ -9,9 +9,9 @@ def authenticate_api_token(func):
         try:
             api_token = request.headers.get('Authorization')
             if api_token != config.AUTH_TOKEN:
-                logger.error(f"Invalid API token {api_token} recived in the request.")
+                logger.error(f"Invalid API token {api_token} received in the request.")
                 return {'error': 'Invalid API token'}, 401
             return func(*args, **kwargs)
         except Exception as e:
-            logger.error(f"Exception occured while authenticating the api token. Error message: {e}")
+            logger.error(f"Exception occurred while authenticating the API token. Error message: {e}")
     return decorated
