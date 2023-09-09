@@ -1,11 +1,13 @@
 import functions_framework
 from google.cloud import tasks_v2
+from utils.auth import authenticate_api_token
 from utils import logger
 import config
 import json
 
 
 @functions_framework.http
+@authenticate_api_token
 def handle(req):
     try:
         payload = json.dumps(req.get_json())

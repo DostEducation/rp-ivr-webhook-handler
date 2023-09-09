@@ -1,3 +1,4 @@
+"""Flask configuration."""
 import os
 
 ENVIRONMENT = os.environ.get("ENVIRONMENT", "development")
@@ -14,3 +15,4 @@ PROJECT = os.environ.get("GCP_PROJECT_NAME")
 QUEUE = os.environ.get("GCP_QUEUE_NAME")
 LOCATION = os.environ.get("GCP_RESOURCE_LOCATION")
 TARGET_FUNCTION_URL = os.environ.get("TARGET_FUNCTION_URL")
+AUTH_TOKEN = os.environ.get("AUTH_TOKEN")
