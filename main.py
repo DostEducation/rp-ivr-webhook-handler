@@ -1,6 +1,6 @@
 import functions_framework
 from google.cloud import tasks_v2
-from utils.api import authenticate_api_token
+from utils.auth import authenticate_api_token
 from utils import logger
 import config
 import json
